@@ -1,0 +1,50 @@
+{
+  "name": "theme-syloti",
+  "version": "1.0.0",
+  "displayName": "Syloti Official",
+  "description": "An elegant and juicy material-like theme for Visual Studio Code.",
+  "publisher": "joshimcse",
+  "author": "Joshim Uddin <joshimcse@gmail.com> (http://about.me/joshimcse)",
+  "icon": "icon.png",
+  "license": "MIT",
+  "scripts": {
+    "build": "node ./scripts/build.js"
+  },
+  "keywords": [
+    "material theme",
+    "siloty",
+    "dark",
+    "light"
+  ],
+  "engines": {
+    "vscode": "^1.38.0"
+  },
+  "repository": {
+    "url": "https://github.com/joshimcse/vscode-syloti-theme",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/joshimcse/vscode-syloti-theme/issues"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Syloti Regular",
+        "uiTheme": "vs-dark",
+        "path": "./themes/syloti-regular.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "js-yaml": "^3.13.1",
+    "nodemon": "^1.19.2",
+    "prettier": "^1.18.2",
+    "tinycolor2": "^1.4.1"
+  },
+  "__metadata": {
+    "publisherDisplayName": "Joshim Uddin"
+  }
+}
