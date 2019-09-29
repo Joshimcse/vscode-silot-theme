@@ -1,13 +1,41 @@
-# README
-## This is the README for your extension "bengalicoder"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+<div align="center">
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+# Syloti Theme
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+An elegant and juicy material-like theme for [Visual Studio Code](http://code.visualstudio.com)
 
-**Enjoy!**
+[![vscode](https://img.shields.io/badge/vscode-v1.3-373277.svg?style=for-the-badge)](https://code.visualstudio.com/updates/v1_31)
+</div>
+
+
+## Installation
+
+1. Open the **Extensions** sidebar in VS Code. `View → Extensions`
+1. Search for `Syloti`, choose "Syloti Official Theme" by **Joshim Uddin**
+1. Click **Install** to install it
+1. Click **Reload** to reload your editor
+1. Navigate to File > Preferences > Color Theme > **Syloti Theme** or any of the variants listed
+1. Yay! You're all set 🎉🎉.
+
+Psst! If you have the [Operator Mono](https://www.typography.com/fonts/operator) font installed, find **Syloti Operator** in the theme list. Also, check out **Syloti Italic** for a less operator-mono-ish experience.
+
+
+## Settings
+
+In the theme settings you can:
+
+- Change the __Font Size__ to scale the whole UI up or down.
+- Choose between 2 Spce __Tab Sizing__ modes.
+- Hide the  __dock buttons__.
+
+To make changes, go to `Settings > Themes > Syloti > Settings` or the cog icon next to the theme picker.
+
+
+
+## Contributing
+
+If you'd like to contribute to this theme, please read the [contributing guidelines](./.github/CONTRIBUTING.md).
+
+## License
+
+[MIT License](./LICENSE)
