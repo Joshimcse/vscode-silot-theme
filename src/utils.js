@@ -2,13 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const { Type, Schema, load } = require('js-yaml');
 
-const SYLOTI_YAML_PATH = path.join(__dirname, 'syloti.yaml');
+const SYLOT_YAML_PATH = path.join(__dirname, 'sylot.yaml');
 const DARK_YAML_PATH = path.join(__dirname, 'dark.yaml');
 const LIGHT_YAML_PATH = path.join(__dirname, 'light.yaml');
 
 const THEME_DIR = path.join(__dirname, '..', 'themes');
 
-const sylotiYaml = fs.readFileSync(SYLOTI_YAML_PATH, 'utf8');
+const sylotYaml = fs.readFileSync(SYLOT_YAML_PATH, 'utf8');
 const darkYaml = fs.readFileSync(DARK_YAML_PATH, 'utf8');
 const lightYaml = fs.readFileSync(LIGHT_YAML_PATH, 'utf8');
 
@@ -17,8 +17,8 @@ const toJSON = theme => {
 };
 
 const mergeYaml = themeName => {
-  if (themeName === 'dark') return darkYaml + '\n' + sylotiYaml;
-  else if (themeName === 'light') return lightYaml + '\n' + sylotiYaml;
+  if (themeName === 'dark') return darkYaml + '\n' + sylotYaml;
+  else if (themeName === 'light') return lightYaml + '\n' + sylotYaml;
   else return '';
 };
 
@@ -42,7 +42,7 @@ function themeGenerate(themeName, fileName) {
   }
 
   fs.writeFileSync(
-    path.join(THEME_DIR, `syloti-${themeName}.json`),
+    path.join(THEME_DIR, `sylot-${themeName}.json`),
     toJSON(finalTheme)
   );
 }

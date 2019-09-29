@@ -1,7 +1,7 @@
 {
-  "name": "theme-syloti",
+  "name": "theme-sylot",
   "version": "1.0.0",
-  "displayName": "Syloti Official Theme",
+  "displayName": "Sylot UI Theme",
   "description": "An elegant and juicy material-like theme for Visual Studio Code.",
   "publisher": "joshimcse",
   "author": "Joshim Uddin <joshimcse@gmail.com> (http://about.me/joshimcse)",
@@ -12,7 +12,7 @@
   },
   "keywords": [
     "material theme",
-    "siloty",
+    "silot",
     "dark",
     "light"
   ],
@@ -32,9 +32,14 @@
   "contributes": {
     "themes": [
       {
-        "label": "Syloti Regular",
+        "label": "Sylot Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/syloti-regular.json"
+        "path": "./themes/sylot-dark.json"
+      },
+      {
+        "label": "Sylot Light",
+        "uiTheme": "vs",
+        "path": "./themes/sylot-light.json"
       }
     ]
   },
