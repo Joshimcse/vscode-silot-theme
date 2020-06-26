@@ -1,14 +1,14 @@
 {
-  "name": "theme-sylot",
-  "version": "1.0.0",
-  "displayName": "Sylot UI Theme",
+  "name": "theme-silot",
+  "version": "0.0.1",
+  "displayName": "Silot UI Theme",
   "description": "An elegant and juicy material-like theme for Visual Studio Code.",
   "publisher": "joshimcse",
   "author": "Joshim Uddin <joshimcse@gmail.com> (http://about.me/joshimcse)",
   "icon": "icon.png",
   "license": "MIT",
   "scripts": {
-    "build": "node ./scripts/build.js"
+    "build": "node ./src/build.js"
   },
   "keywords": [
     "material theme",
@@ -32,14 +32,14 @@
   "contributes": {
     "themes": [
       {
-        "label": "Sylot Dark",
+        "label": "Silot (Dark Classic)",
         "uiTheme": "vs-dark",
-        "path": "./themes/sylot-dark.json"
+        "path": "./themes/silot-dark-classic.json"
       },
       {
-        "label": "Sylot Light",
+        "label": "Silot (Light Classic)",
         "uiTheme": "vs",
-        "path": "./themes/sylot-light.json"
+        "path": "./themes/silot-light-classic.json"
       }
     ]
   },
