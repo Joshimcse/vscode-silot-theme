@@ -59,12 +59,12 @@ colors:
   activityBar.background: *BG                                                      # Activity Bar background color
   activityBar.inactiveForeground:                                                  # Activity bar item foreground color when it is inactive
   activityBar.dropBackground:                                                      # Drag and drop feedback color for the Activity Bar items
-  activityBar.foreground:                                                          # Activity bar foreground color (for example used for the icons)
-  activityBar.border: *BORDER                                                      # Activity Bar border color with the Side Bar
-  activityBar.activeBorder: *WHITE                                                 # Activity Bar indicator color
+  activityBar.foreground: "#F4A0AC"                                                         # Activity bar foreground color (for example used for the icons)
+  activityBar.border: *BORDER                                                   # Activity Bar border color with the Side Bar
+  activityBar.activeBorder: "#F4A0AC"                                                  # Activity Bar indicator color
   activityBar.activeBackground:                                                    # Activity Bar indicator background color
-  activityBarBadge.background: *BGButton                                           # Activity notification badge background color
-  activityBarBadge.foreground:                                                     # Activity notification badge foreground color
+  activityBarBadge.background: *CYAN                                           # Activity notification badge background color
+  activityBarBadge.foreground:                                                   # Activity notification badge foreground color
 
   # ——— Side Bar ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_side-bar
@@ -98,7 +98,7 @@ colors:
   foreground:                                                                     # Overall foreground color. This color is only used if not overridden by a component
   widget.shadow:                                                                  # Shadow color of widgets such as Find/Replace inside the editor
   descriptionForeground:
-  selection.background:                                                           # Background color of text selections in the workbench (for input fields or text areas, does not apply to selections within the editor and the terminal)
+  selection.background:  *SELECTION                                                         # Background color of text selections in the workbench (for input fields or text areas, does not apply to selections within the editor and the terminal)
   errorForeground:                                                                # Overall foreground color for error messages (this color is only used if not overridden by a component)
 
   # ——— Dropdown Control ———
@@ -114,7 +114,7 @@ colors:
   editorLineNumber.foreground: *COMMENT
   editorCursor.foreground: *COMMENT
   # The selection color battle starts here.
-  editor.selectionBackground:                                                       # Color of the editor selection
+  editor.selectionBackground: *SELECTION                                                         # Color of the editor selection
   editor.inactiveSelectionBackground:                                               # Color of the selection in an inactive editor
   editor.selectionHighlightBackground:                                              # Color for regions with the same content as the selection
   editor.foldBackground:                                                            # Background color for folded ranges
