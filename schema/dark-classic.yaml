@@ -448,3 +448,40 @@ tokenColors:
       foreground: *CYAN
   # ——— End [[COMMON]] Syntax Highlight for all language ———
 
+
+    # ——— Start Syntax Highlight for {JSON} ———
+  - name: "JSON Porperty Name"
+    scope:
+      - support.type.property-name.json
+    settings:
+      foreground: *WHITE
+  
+  - name: "JSON String Value"
+    scope:
+      - meta.structure.dictionary.value.json
+      - string.quoted.double.json
+    settings:
+      foreground: *ORANGE
+  
+  - name: "JSON String Value"
+    scope:
+      - constant.language.json
+      - constant.numeric.json
+    settings:
+      foreground: *CYAN
+
+  - name: "JSON Double Quotation Marks"
+    scope:
+      - punctuation.support.type.property-name.end.json
+      - punctuation.support.type.property-name.begin.json
+    settings:
+      foreground: *YELLOW
+
+  - name: "JSON Separator"
+    scope:
+      - punctuation.separator.dictionary.key-value.json
+      - punctuation.separator.dictionary.pair.json
+    settings:
+      foreground: *WHITE
+  # ——— End Syntax Highlight for {JSON} ———
+
