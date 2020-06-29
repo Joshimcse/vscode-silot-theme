@@ -485,3 +485,17 @@ tokenColors:
       foreground: *WHITE
   # ——— End Syntax Highlight for {JSON} ———
 
+  # ——— Start Syntax Highlight for {YAML} ———
+  - name: "YAML Variable"
+    scope:
+      - meta.property.yaml
+    settings:
+      foreground: *CYAN
+  
+  - name: "YAML Variable"
+    scope:
+      - entity.name.tag.yaml
+    settings:
+      foreground: *WHITE
+  # ——— End Syntax Highlight for {YAML} ———
+
