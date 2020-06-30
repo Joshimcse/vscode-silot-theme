@@ -51,7 +51,172 @@ Silot Dark Classic:
     - &BGDark "#21222C" # HSV (234.55, 25   , 17.25)
     - &BGDarker "#191A21" # HSV (234.55, 25   , 13   )
 
-# ——— Theme Color reference. ——— 
+# ——— Syntax Highlight ———
+tokenColors:
+  # ——— Start of [[COMMON]] Syntax Highlight for all language ———
+  - name: "[[COMMON]] Comments"
+    scope:
+      - comment
+    settings:
+      foreground: *COMMENT
+      
+  - name: "[[COMMON]] OPERATOR"
+    scope:
+      - keyword
+    settings:
+      foreground: *YELLOW
+    
+  - name: "[[COMMON]] Keyword"
+    scope:
+      - storage.type
+      - keyword.control.conditional
+    settings:
+      foreground: "#9A7FD5"
+      
+  - name: "[[COMMON]] Constant "
+    scope:
+      - constant.numeric
+      - constant.language.boolean.true
+    settings:
+      foreground: "#A1F7B5"
+  
+  - name: "[[COMMON]] String"
+    scope:
+      - string
+    settings:
+      foreground: *ORANGE
+      
+  - name: "[[COMMON]] Variable"
+    scope:
+      - variable
+    settings:
+      foreground: *CYAN
+  
+  - name: "[[COMMON]] Object"
+    scope:
+      - variable.other.object
+    settings:
+      foreground: *WHITE
+  
+  - name: "[[COMMON]] Object Member"
+    scope:
+      - meta.object.member
+    settings:
+      foreground: *YELLOW
+  
+  - name: "[[COMMON]] Object Property access"
+    scope:
+      - variable.other.property
+      - variable.other.object.property
+      - variable.other.constant.property
+    settings:
+      foreground: *YELLOW
+      
+  - name: "[[COMMON]] Function Defination"
+    scope:
+      - entity.name.function
+      - meta.definition.function
+    settings:
+      foreground: *YELLOW
+  
+  - name: "[[COMMON]] Function Call"
+    scope:
+      - meta.function-call
+    settings:
+      foreground: *WHITE
+      
+  - name: "[[COMMON]] Brackets"
+    scope:
+      - punctuation.definition.block
+      - meta.brace.square
+      - meta.brace.round
+    settings:
+      foreground: *WHITE
+  
+  - name: "[[COMMON]] Arrow Function Operator"
+    scope:
+      - storage.type.function.arrow
+    settings:
+      foreground: *YELLOW
+  # ——— End of [[COMMON]] Syntax Highlight for all language ———
+
+  # ——— Start of Syntax Highlight for {JAVASCRIPT} ———
+  - name: "[JS] console's log color"
+    scope:
+      - support.function.console.js
+    settings:
+      foreground: *YELLOW
+  # ——— End of Syntax Highlight for {JAVASCRIPT} ———
+
+  # ——— Start of Syntax Highlight for {TYPESCRIPT} ———
+  # ——— End of Syntax Highlight for {TYPESCRIPT} ———
+
+  # ——— Start of Syntax Highlight for {PYTHON} ———
+  # ——— End of Syntax Highlight for {PYTHON} ———
+
+  # ——— Start of Syntax Highlight for {PHP} ———
+  # ——— End of Syntax Highlight for {PHP} ———
+
+  # ——— Start of Syntax Highlight for {JAVA} ———
+  # ——— End of Syntax Highlight for {JAVA} ———
+
+  # ——— Start of Syntax Highlight for {HTML} ———
+  # ——— End of Syntax Highlight for {HTML} ———
+
+  # ——— Start of Syntax Highlight for {CSS} ———
+  # ——— End of Syntax Highlight for {CSS} ———
+
+  # ——— Start of Syntax Highlight for {JSON} ———
+  - name: "JSON Porperty Name"
+    scope:
+      - support.type.property-name.json
+    settings:
+      foreground: *WHITE
+  
+  - name: "JSON String Value"
+    scope:
+      - meta.structure.dictionary.value.json
+      - string.quoted.double.json
+    settings:
+      foreground: *ORANGE
+  
+  - name: "JSON String Value"
+    scope:
+      - constant.language.json
+      - constant.numeric.json
+    settings:
+      foreground: *CYAN
+
+  - name: "JSON Double Quotation Marks"
+    scope:
+      - punctuation.support.type.property-name.end.json
+      - punctuation.support.type.property-name.begin.json
+    settings:
+      foreground: *YELLOW
+
+  - name: "JSON Separator"
+    scope:
+      - punctuation.separator.dictionary.key-value.json
+      - punctuation.separator.dictionary.pair.json
+    settings:
+      foreground: *WHITE
+  # ——— End of Syntax Highlight for {JSON} ———
+
+  # ——— Start of Syntax Highlight for {YAML} ———
+  - name: "YAML Variable"
+    scope:
+      - meta.property.yaml
+    settings:
+      foreground: *CYAN
+  
+  - name: "YAML Variable"
+    scope:
+      - entity.name.tag.yaml
+    settings:
+      foreground: *WHITE
+  # ——— End of Syntax Highlight for {YAML} ———
+
+# ——— UI Color ——— 
 # https://code.visualstudio.com/docs/getstarted/theme-color-reference
 colors:
   # ——— Activity Bar ———
@@ -406,96 +571,3 @@ colors:
   minimapSlider.background:                                                        # Minimap slider background color.
   minimapGutter.addedBackground:                                                   # Minimap gutter color for added content.
   minimapGutter.deletedBackground:                                                 # Minimap gutter color for deleted content.
-
-# Syntaxes
-tokenColors:
-  # ——— Start [[COMMON]] Syntax Highlight for all language ———
-  - name: "[[COMMON]] Comments"
-    scope:
-      - comment
-    settings:
-      foreground: *COMMENT
-      
-  - name: "[[COMMON]] OPERATOR"
-    scope:
-      - keyword
-    settings:
-      foreground: *YELLOW
-    
-  - name: "[[COMMON]] Keyword"
-    scope:
-      - storage.type
-      - keyword.control.conditional
-    settings:
-      foreground: "#9A7FD5"
-      
-  - name: "[[COMMON]] Number"
-    scope:
-      - constant.numeric
-    settings:
-      foreground: "#A1F7B5"
-  
-  - name: "[[COMMON]] String"
-    scope:
-      - string
-    settings:
-      foreground: *ORANGE
-      
-  - name: "[[COMMON]] Variable"
-    scope:
-      - variable
-    settings:
-      foreground: *CYAN
-  # ——— End [[COMMON]] Syntax Highlight for all language ———
-
-
-    # ——— Start Syntax Highlight for {JSON} ———
-  - name: "JSON Porperty Name"
-    scope:
-      - support.type.property-name.json
-    settings:
-      foreground: *WHITE
-  
-  - name: "JSON String Value"
-    scope:
-      - meta.structure.dictionary.value.json
-      - string.quoted.double.json
-    settings:
-      foreground: *ORANGE
-  
-  - name: "JSON String Value"
-    scope:
-      - constant.language.json
-      - constant.numeric.json
-    settings:
-      foreground: *CYAN
-
-  - name: "JSON Double Quotation Marks"
-    scope:
-      - punctuation.support.type.property-name.end.json
-      - punctuation.support.type.property-name.begin.json
-    settings:
-      foreground: *YELLOW
-
-  - name: "JSON Separator"
-    scope:
-      - punctuation.separator.dictionary.key-value.json
-      - punctuation.separator.dictionary.pair.json
-    settings:
-      foreground: *WHITE
-  # ——— End Syntax Highlight for {JSON} ———
-
-  # ——— Start Syntax Highlight for {YAML} ———
-  - name: "YAML Variable"
-    scope:
-      - meta.property.yaml
-    settings:
-      foreground: *CYAN
-  
-  - name: "YAML Variable"
-    scope:
-      - entity.name.tag.yaml
-    settings:
-      foreground: *WHITE
-  # ——— End Syntax Highlight for {YAML} ———
-
