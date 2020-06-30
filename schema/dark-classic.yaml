@@ -2,6 +2,7 @@ name: Silot (Dark Classic)
 author: Joshim Uddin
 maintainers:
   - Joshim Uddin <joshimcse@gmail.com>
+version: 0.1.0
 type: dark
 Silot Dark Classic:
   base:
@@ -14,9 +15,9 @@ Silot Dark Classic:
     - &GREEN "#50FA7B"
     - &ORANGE "#F28B54"
     - &PINK "#FF79C6"
-    - &PURPLE "#BD93F9"
+    - &PURPLE "#DA70D6"
     - &RED "#c7444a"
-    - &YELLOW "#D2C057"
+    - &YELLOW "#FFD55C"
   ansi:
     - &COLOR0 "#21222C"
     - &COLOR1 "#FF5555"
@@ -62,21 +63,21 @@ tokenColors:
       
   - name: "[[COMMON]] OPERATOR"
     scope:
-      - keyword
+      - keyword.operator
     settings:
       foreground: *YELLOW
     
   - name: "[[COMMON]] Keyword"
     scope:
+      - keyword
       - storage.type
-      - keyword.control.conditional
     settings:
       foreground: "#9A7FD5"
       
   - name: "[[COMMON]] Constant "
     scope:
       - constant.numeric
-      - constant.language.boolean.true
+      - constant.language.boolean
     settings:
       foreground: "#A1F7B5"
   
@@ -161,6 +162,26 @@ tokenColors:
   # ——— End of Syntax Highlight for {JAVA} ———
 
   # ——— Start of Syntax Highlight for {HTML} ———
+  - name: "HTML Tag Name"
+    scope:
+      - entity.name.tag.html
+      - punctuation.definition.tag.begin.html
+      - punctuation.definition.tag.end.html
+    settings:
+      foreground: *CYAN
+  
+  - name: "HTML Attribute"
+    scope:
+      - entity.other.attribute-name.html
+    settings:
+      foreground: !alpha [*WHITE, 93]
+      
+  - name: "HTML Comment"
+    scope:
+      - punctuation.definition.comment.html
+      - comment.block.html
+    settings:
+      foreground: *COMMENT
   # ——— End of Syntax Highlight for {HTML} ———
 
   # ——— Start of Syntax Highlight for {CSS} ———

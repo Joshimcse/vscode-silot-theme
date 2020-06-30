@@ -14,10 +14,10 @@ An elegant and juicy material-like theme for [Visual Studio Code](http://code.vi
 1. Search for `Silot`, choose "Silot Official Theme" by **Joshim Uddin**
 1. Click **Install** to install it
 1. Click **Reload** to reload your editor
-1. Navigate to File > Preferences > Color Theme > **Silot Theme** or any of the variants listed
+1. Navigate to File > Preferences > Color Theme > **Silot (Dark Classic)** or any of the variants listed
 1. Yay! You're all set 🎉🎉.
 
-Psst! If you have the [Operator Mono](https://www.typography.com/fonts/operator) font installed, find **Silot Operator** in the theme list. Also, check out **Silot Italic** for a less operator-mono-ish experience.
+Psst! If you have the [Dank Mono](https://dank.sh) / [Operator Mono](https://www.typography.com/fonts/operator) font installed, find **Silot Pro (variant-name)** in the theme list. Also, check out **Silot Italic** for a less operator-mono-ish experience.
 
 
 ## Settings
