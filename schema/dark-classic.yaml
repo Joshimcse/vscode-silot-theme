@@ -55,114 +55,150 @@ Silot Dark Classic:
 # ——— Syntax Highlight ———
 tokenColors:
   # ——— Start of [[COMMON]] Syntax Highlight for all language ———
+  # All kind of comment
   - name: "[[COMMON]] Comments"
     scope:
       - comment
     settings:
       foreground: *COMMENT
-      
-  - name: "[[COMMON]] OPERATOR"
-    scope:
-      - keyword.operator
-    settings:
-      foreground: *YELLOW
-    
-  - name: "[[COMMON]] Keyword"
-    scope:
-      - keyword
-      - storage.type
-      - storage.modifier
-    settings:
-      foreground: "#9A7FD5"
-      
-  - name: "[[COMMON]] Constant "
-    scope:
-      - constant.numeric
-      - constant.language.boolean
-      - constant.language
-    settings:
-      foreground: "#A1F7B5"
-  
-  - name: "[[COMMON]] String"
-    scope:
-      - string
-    settings:
-      foreground: *ORANGE
-      
+
+  # Identifier
   - name: "[[COMMON]] Variable"
     scope:
       - variable
     settings:
       foreground: *CYAN
+
+  # Operator symbols color, including =>
+  - name: "[[COMMON]] Operators"
+    scope:
+      - keyword.operator
+      - storage.type.function.arrow
+    settings:
+      foreground: *YELLOW
+
+  # String - '' and ""
+  - name: "[[COMMON]] String"
+    scope:
+      - string
+    settings:
+      foreground: *ORANGE
   
+  # Semicolon, Comma
+  - name: "[[COMMON]] Semicolon, Comma"
+    scope:
+      - punctuation.separator.comma
+      - punctuation.terminator.statement
+    settings:
+      foreground: !alpha [*WHITE, 90]
+
+  # All kind of  buildin keyword, operator expression,
+  - name: "[[COMMON]] Keyword"
+    scope:
+      - keyword
+      - storage.type
+      - storage.modifier
+      - keyword.operator.new
+      - keyword.operator.expression
+    settings:
+      foreground: "#9A7FD5"
+
+  # Constant - number, boolean and others
+  - name: "[[COMMON]] Constant "
+    scope:
+      - constant
+      - constant.numeric
+      - constant.language
+    settings:
+      foreground: "#A1F7B5"
+
+  # call object
   - name: "[[COMMON]] Object"
     scope:
       - variable.other.object
       - support.constant
-      - variable.other.readwrite
     settings:
       foreground: *WHITE
-  
-  - name: "[[COMMON]] Object Member"
-    scope:
-      - meta.object.member
-    settings:
-      foreground: *YELLOW
-  
-  - name: "[[COMMON]] Object Property access"
+
+  # call object property
+  - name: "[[COMMON]] Object Property"
     scope:
       - variable.other.property
       - variable.other.object.property
       - variable.other.constant.property
     settings:
       foreground: *YELLOW
-      
+  
+  # call object property
+  - name: "[[COMMON]] Object Property"
+    scope:
+      - variable.other.object.property
+    settings:
+      foreground: !alpha [*ORANGE, 99]
+
+  # define object memeber/property key
+  - name: "[[COMMON]] Object Member"
+    scope:
+      - meta.object.member
+    settings:
+      foreground: *YELLOW
+
+  # define function's
   - name: "[[COMMON]] Function Defination"
     scope:
       - meta.definition.function
       - meta.function.expression
+      - meta.definition.method
     settings:
       foreground: *CYAN
-  
+
+  # call or access function's
   - name: "[[COMMON]] Function Call"
     scope:
       - meta.function-call
     settings:
       foreground: *YELLOW
-  
-  - name: "[[COMMON]] Function Call"
+
+  # functions provided by the framework/library
+  - name: "[[COMMON]] functions provided by the framework/library"
     scope:
       - support.function
     settings:
       foreground: *WHITE
   
+  # Accessors Math.random()
+  - name: "[[COMMON]] Accessors"
+    scope:
+      - punctuation.accessor
+    settings:
+      foreground: *WHITE
+
   - name: "[[COMMON]] Class"
     scope:
       - entity.name.type.class
       - entity.name.type.module
     settings:
       foreground: *CYAN
-  
+
   - name: "[[COMMON]] Class"
     scope:
       - entity.other.inherited-class
     settings:
       foreground: *YELLOW
-      
+
+  # all kind of brackets color
   - name: "[[COMMON]] Brackets"
     scope:
       - punctuation.definition.block
       - meta.brace.square
       - meta.brace.round
+      - punctuation.definition.parameters
+      - punctuation.definition.binding-pattern.object
+      - punctuation.definition.arguments
     settings:
       foreground: *WHITE
-  
-  - name: "[[COMMON]] Arrow Function Operator"
-    scope:
-      - storage.type.function.arrow
-    settings:
-      foreground: *YELLOW
-  
+
+  # common tag name
   - name: "[[COMMON]] Tag Name"
     scope:
       - entity.name.tag
@@ -170,12 +206,20 @@ tokenColors:
       - punctuation.definition.tag.end
     settings:
       foreground: *CYAN
-  
+
+  # common attribute name
   - name: "[[COMMON]]  Attribute"
     scope:
       - entity.other.attribute-name
     settings:
       foreground: !alpha [*WHITE, 93]
+  
+  # buildin Class - Object, Math, Array
+  - name: "[[COMMON]]  Attribute"
+    scope:
+      - support.class
+    settings:
+      foreground: *WHITE
   # ——— End of [[COMMON]] Syntax Highlight for all language ———
 
   # ——— Start of Syntax Highlight for {JAVASCRIPT} ———
@@ -185,6 +229,15 @@ tokenColors:
     settings:
       foreground: *YELLOW
   
+  # JS Comments
+  - name: "[JS] Comments"
+    scope:
+      - punctuation.definition.block.tag.jsdoc
+      - storage.type.class.jsdoc
+      - comment.block.documentation.js
+    settings:
+      foreground: *COMMENT
+
   - name: "JSON Function Call"
     scope:
       - support.function.json
@@ -193,9 +246,19 @@ tokenColors:
   # ——— End of Syntax Highlight for {JAVASCRIPT} ———
 
   # ——— Start of Syntax Highlight for {JAVASCRIPT React - jsx} ———
-
-  # ——— End of Syntax Highlight for {JAVASCRIPT React - jsx} ———
+  - name: "import as alias"
+    scope:
+      - variable.other.readwrite.alias
+    settings:
+      foreground: *CYAN
   
+  - name: "import as alias"
+    scope:
+      - constant.language.import-export-all
+    settings:
+      foreground: *WHITE
+  # ——— End of Syntax Highlight for {JAVASCRIPT React - jsx} ———
+
   # ——— Start of Syntax Highlight for {TYPESCRIPT} ———
   # ——— End of Syntax Highlight for {TYPESCRIPT} ———
 
@@ -216,13 +279,13 @@ tokenColors:
       - punctuation.definition.tag.end.html
     settings:
       foreground: *CYAN
-  
+
   - name: "HTML Attribute"
     scope:
       - entity.other.attribute-name.html
     settings:
       foreground: !alpha [*WHITE, 93]
-      
+
   - name: "HTML Comment"
     scope:
       - punctuation.definition.comment.html
@@ -240,14 +303,14 @@ tokenColors:
       - support.type.property-name.json
     settings:
       foreground: *WHITE
-  
+
   - name: "JSON String Value"
     scope:
       - meta.structure.dictionary.value.json
       - string.quoted.double.json
     settings:
       foreground: *ORANGE
-  
+
   - name: "JSON String Value"
     scope:
       - constant.language.json
@@ -276,7 +339,7 @@ tokenColors:
       - meta.property.yaml
     settings:
       foreground: *CYAN
-  
+
   - name: "YAML Variable"
     scope:
       - entity.name.tag.yaml
@@ -284,61 +347,61 @@ tokenColors:
       foreground: *WHITE
   # ——— End of Syntax Highlight for {YAML} ———
 
-# ——— UI Color ——— 
+# ——— UI Color ———
 # https://code.visualstudio.com/docs/getstarted/theme-color-reference
 colors:
   # ——— Activity Bar ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_activity-bar
-  activityBar.background: *BG                                                      # Activity Bar background color
-  activityBar.inactiveForeground:                                                  # Activity bar item foreground color when it is inactive
-  activityBar.dropBackground:                                                      # Drag and drop feedback color for the Activity Bar items
-  activityBar.foreground: !alpha [*CYAN, 98]                                            # Activity bar foreground color (for example used for the icons)
-  activityBar.border: !alpha [*CYAN, 45]                                                        # Activity Bar border color with the Side Bar
-  activityBar.activeBorder: !alpha [*CYAN, 95]                                                # Activity Bar indicator color
-  activityBar.activeBackground:                                                    # Activity Bar indicator background color
-  activityBarBadge.background: !alpha [*WHITE, 98]                                               # Activity notification badge background color
-  activityBarBadge.foreground: *BGButton                                                   # Activity notification badge foreground color
+  activityBar.background: *BG # Activity Bar background color
+  activityBar.inactiveForeground: # Activity bar item foreground color when it is inactive
+  activityBar.dropBackground: # Drag and drop feedback color for the Activity Bar items
+  activityBar.foreground: !alpha [*CYAN, 98] # Activity bar foreground color (for example used for the icons)
+  activityBar.border: !alpha [*CYAN, 45] # Activity Bar border color with the Side Bar
+  activityBar.activeBorder: !alpha [*CYAN, 95] # Activity Bar indicator color
+  activityBar.activeBackground: # Activity Bar indicator background color
+  activityBarBadge.background: !alpha [*WHITE, 98] # Activity notification badge background color
+  activityBarBadge.foreground: *BGButton # Activity notification badge foreground color
 
   # ——— Side Bar ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_side-bar
-  sideBar.background: *BGLight                                                     # Side Bar background color
-  sideBar.foreground:                                                              # Side Bar foreground color. The Side Bar is the container for views like Explorer and Search
-  sideBar.border: !alpha [*CYAN, 45]                                               # Side Bar border color on the side separating the editor
-  sideBarTitle.foreground:                                                         # Side Bar title foreground color
-  sideBarSectionHeader.background:                                                 # Side Bar section header background color
-  sideBarSectionHeader.foreground:                                                 # Side Bar section header foreground color
-  sideBarSectionHeader.border: !alpha [*CYAN, 45]                                  # Side bar section header border color
-  
+  sideBar.background: *BGLight # Side Bar background color
+  sideBar.foreground: # Side Bar foreground color. The Side Bar is the container for views like Explorer and Search
+  sideBar.border: !alpha [*CYAN, 45] # Side Bar border color on the side separating the editor
+  sideBarTitle.foreground: # Side Bar title foreground color
+  sideBarSectionHeader.background: # Side Bar section header background color
+  sideBarSectionHeader.foreground: # Side Bar section header foreground color
+  sideBarSectionHeader.border: !alpha [*CYAN, 45] # Side bar section header border color
+
   # ——— Badge ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_badge
-  badge.foreground:                                                                # Badge foreground color
-  badge.background: *BGButton                                                      # Badge background color
+  badge.foreground: # Badge foreground color
+  badge.background: *BGButton # Badge background color
 
   # ——— Button Control ———
   # https: //code.visualstudio.com/docs/getstarted/theme-color-reference#_button-control
-  button.background: *BGButton                                                    # Button background color
-  button.foreground:                                                              # Button foreground color
-  button.hoverBackground:                                                         # Button background color when hovering
+  button.background: *BGButton # Button background color
+  button.foreground: # Button foreground color
+  button.hoverBackground: # Button background color when hovering
 
   # ——— Contrast Colors ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_contrast-colors
-  contrastBorder:                                                                 # An extra border around elements to separate them from others for greater contrast
-  contrastActiveBorder:                                                           # An extra border around active elements to separate them from others for greater contrast
+  contrastBorder: # An extra border around elements to separate them from others for greater contrast
+  contrastActiveBorder: # An extra border around active elements to separate them from others for greater contrast
 
   # ——— Base Colors ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_base-colors
-  focusBorder: *COMMENT                                                           # Overall border color for focused elements. This color is only used if not overridden by a component
-  foreground:                                                                     # Overall foreground color. This color is only used if not overridden by a component
-  widget.shadow:                                                                  # Shadow color of widgets such as Find/Replace inside the editor
+  focusBorder: *COMMENT # Overall border color for focused elements. This color is only used if not overridden by a component
+  foreground: # Overall foreground color. This color is only used if not overridden by a component
+  widget.shadow: # Shadow color of widgets such as Find/Replace inside the editor
   descriptionForeground:
-  selection.background:  *SELECTION                                               # Background color of text selections in the workbench (for input fields or text areas, does not apply to selections within the editor and the terminal)
-  errorForeground:                                                                # Overall foreground color for error messages (this color is only used if not overridden by a component)
+  selection.background: *SELECTION # Background color of text selections in the workbench (for input fields or text areas, does not apply to selections within the editor and the terminal)
+  errorForeground: # Overall foreground color for error messages (this color is only used if not overridden by a component)
 
   # ——— Dropdown Control ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_dropdown-control
-  dropdown.background:                                                             # Dropdown background
-  dropdown.border: !alpha [*CYAN, 45]                                                            # Dropdown border
-  dropdown.foreground:                                                             # Dropdown foreground
+  dropdown.background: # Dropdown background
+  dropdown.border: !alpha [*CYAN, 45] # Dropdown border
+  dropdown.foreground: # Dropdown foreground
 
   # ——— Editor Colors ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_editor-colors
@@ -347,130 +410,130 @@ colors:
   editorLineNumber.foreground: *COMMENT
   editorCursor.foreground: *COMMENT
   # The selection color battle starts here.
-  editor.selectionBackground: *SELECTION                                            # Color of the editor selection
-  editor.inactiveSelectionBackground:                                               # Color of the selection in an inactive editor
-  editor.selectionHighlightBackground: *SELECTION                                   # Color for regions with the same content as the selection
-  editor.foldBackground:                                                            # Background color for folded ranges
-  editor.wordHighlightBackground:                                                   # Background color of a symbol during read-access, for example when reading a variable
-  editor.wordHighlightStrongBackground:                                             # Background color of a symbol during write-access, for example when writing to a variable
-  editor.findMatchBackground: 
-  editor.findMatchHighlightBackground:                                              # Color of the other search matches
-  editor.findRangeHighlightBackground:                                              # Color the range limiting the search
-  editor.hoverHighlightBackground:                                                  # Highlight below the word for which a hover is shown
-  editor.lineHighlightBackground:                                                   # Background color for the highlight of line at the cursor position
-  editor.lineHighlightBorder:                                                       # Background color for the border around the line at the cursor position
-  editor.rangeHighlightBackground:                                                  # Background color of highlighted ranges, like by Quick Open and Find features
-  editorLink.activeForeground:                                                      # Color of active links
-  editorIndentGuide.background:                                                     # Color of the editor indentation guides
-  editorIndentGuide.activeBackground:                                               # Color of the active indentation guide
-  editorRuler.foreground:                                                           # Color of the editor rulers
-  editorCodeLens.foreground:                                                        # Foreground color of an editor CodeLens
-  editorWhitespace.foreground:                                                      # Color of whitespace characters in the editor
+  editor.selectionBackground: *SELECTION # Color of the editor selection
+  editor.inactiveSelectionBackground: # Color of the selection in an inactive editor
+  editor.selectionHighlightBackground: *SELECTION # Color for regions with the same content as the selection
+  editor.foldBackground: # Background color for folded ranges
+  editor.wordHighlightBackground: # Background color of a symbol during read-access, for example when reading a variable
+  editor.wordHighlightStrongBackground: # Background color of a symbol during write-access, for example when writing to a variable
+  editor.findMatchBackground:
+  editor.findMatchHighlightBackground: # Color of the other search matches
+  editor.findRangeHighlightBackground: # Color the range limiting the search
+  editor.hoverHighlightBackground: # Highlight below the word for which a hover is shown
+  editor.lineHighlightBackground: # Background color for the highlight of line at the cursor position
+  editor.lineHighlightBorder: # Background color for the border around the line at the cursor position
+  editor.rangeHighlightBackground: # Background color of highlighted ranges, like by Quick Open and Find features
+  editorLink.activeForeground: # Color of active links
+  editorIndentGuide.background: # Color of the editor indentation guides
+  editorIndentGuide.activeBackground: # Color of the active indentation guide
+  editorRuler.foreground: # Color of the editor rulers
+  editorCodeLens.foreground: # Foreground color of an editor CodeLens
+  editorWhitespace.foreground: # Color of whitespace characters in the editor
 
-  editor.snippetTabstopHighlightBackground:                                         # Highlight background color of a snippet tabstop
-  editor.snippetTabstopHighlightBorder:                                             # Highlight border color of a snippet tabstop
-  editor.snippetFinalTabstopHighlightBackground:                                    # Highlight background color of the final tabstop of a snippet
-  editor.snippetFinalTabstopHighlightBorder:                                        # Highlight border color of the final tabstop of a snippet
-  
+  editor.snippetTabstopHighlightBackground: # Highlight background color of a snippet tabstop
+  editor.snippetTabstopHighlightBorder: # Highlight border color of a snippet tabstop
+  editor.snippetFinalTabstopHighlightBackground: # Highlight background color of the final tabstop of a snippet
+  editor.snippetFinalTabstopHighlightBorder: # Highlight border color of the final tabstop of a snippet
+
   # Overview ruler is located beneath the scroll bar on the right edge of the editor and gives an overview of the decorations in the editor.
-  editorOverviewRuler.border:                                              # Color of the overview ruler border
+  editorOverviewRuler.border: # Color of the overview ruler border
   editorOverviewRuler.findMatchForeground:
   editorOverviewRuler.rangeHighlightForeground:
-  editorOverviewRuler.selectionHighlightForeground: 
-  editorOverviewRuler.wordHighlightForeground: 
-  editorOverviewRuler.wordHighlightStrongForeground: 
-  editorOverviewRuler.modifiedForeground: 
-  editorOverviewRuler.addedForeground: 
-  editorOverviewRuler.deletedForeground: 
-  editorOverviewRuler.errorForeground: 
-  editorOverviewRuler.warningForeground: 
-  editorOverviewRuler.infoForeground: 
+  editorOverviewRuler.selectionHighlightForeground:
+  editorOverviewRuler.wordHighlightForeground:
+  editorOverviewRuler.wordHighlightStrongForeground:
+  editorOverviewRuler.modifiedForeground:
+  editorOverviewRuler.addedForeground:
+  editorOverviewRuler.deletedForeground:
+  editorOverviewRuler.errorForeground:
+  editorOverviewRuler.warningForeground:
+  editorOverviewRuler.infoForeground:
   # Errors and warnings:
-  editorError.foreground:                                                          # Foreground color of error squigglies in the editor
-  editorError.border:                                                              # Border color of error squigglies in the editor
-  editorWarning.foreground:                                                        # Foreground color of warning squigglies in the editor
-  editorWarning.border:                                                            # Border color of warning squigglies in the editor
-	# Gutter: The gutter contains the glyph margins and the line numbers:
-  editorGutter.background:                                                         # Background color of the editor gutter
-  editorGutter.modifiedBackground:                                                 # Editor gutter background color for lines that are modified
-  editorGutter.addedBackground:                                                    # Editor gutter background color for lines that are added
-  editorGutter.deletedBackground:                                                  # Editor gutter background color for lines that are deleted
+  editorError.foreground: # Foreground color of error squigglies in the editor
+  editorError.border: # Border color of error squigglies in the editor
+  editorWarning.foreground: # Foreground color of warning squigglies in the editor
+  editorWarning.border: # Border color of warning squigglies in the editor
+  # Gutter: The gutter contains the glyph margins and the line numbers:
+  editorGutter.background: # Background color of the editor gutter
+  editorGutter.modifiedBackground: # Editor gutter background color for lines that are modified
+  editorGutter.addedBackground: # Editor gutter background color for lines that are added
+  editorGutter.deletedBackground: # Editor gutter background color for lines that are deleted
 
-  editorBracketMatch.background:                                                    # Background color behind matching brackets
-  editorBracketMatch.border: !alpha [*CYAN, 45]                                                   # Color for matching brackets boxes
+  editorBracketMatch.background: # Background color behind matching brackets
+  editorBracketMatch.border: !alpha [*CYAN, 45] # Color for matching brackets boxes
 
   # ——— Editor Group & Tabs ———
-  editorGroup.background:                                                          # Background color of an editor group. The background color shows up when dragging editor groups around
-  editorGroup.border: !alpha [*CYAN, 45]                                                         # Color to separate multiple editor groups from each other
-  editorGroup.dropBackground:                                                      # Background color when dragging editors around
-  editorGroupHeader.noTabsBackground:                                              # Background color of the editor group title header when Tabs are disabled
-  editorGroupHeader.tabsBackground:                                                # Background color of the Tabs container
-  editorGroupHeader.tabsBorder:                                                    # Border color of the editor group title header when tabs are enabled. Editor groups are the containers of editors
-  tab.activeBackground:                                                            # Active Tab background color
-  tab.activeForeground:                                                            # Active Tab foreground color in an active group
-  tab.border: !alpha [*CYAN, 45]        
-  tab.activeBorderTop:                                                             # A border drawn to the top of the active tab
-  tab.activeBorder:   *WHITE                                                       # A border drawn to the bottom of the active tab
-  tab.unfocusedActiveBorder:                                                       # A border drawn to the bottom of the active tab in an editor group that is not focused
-  tab.inactiveBackground:                                                          # Inactive Tab background color
-  tab.inactiveForeground:                                                          # Inactive Tab foreground color in an active group
-  tab.unfocusedActiveForeground:                                                   # Active tab foreground color in an inactive editor group
-  tab.unfocusedInactiveForeground:                                                 # Inactive tab foreground color in an inactive editor group
+  editorGroup.background: # Background color of an editor group. The background color shows up when dragging editor groups around
+  editorGroup.border: !alpha [*CYAN, 45] # Color to separate multiple editor groups from each other
+  editorGroup.dropBackground: # Background color when dragging editors around
+  editorGroupHeader.noTabsBackground: # Background color of the editor group title header when Tabs are disabled
+  editorGroupHeader.tabsBackground: # Background color of the Tabs container
+  editorGroupHeader.tabsBorder: # Border color of the editor group title header when tabs are enabled. Editor groups are the containers of editors
+  tab.activeBackground: # Active Tab background color
+  tab.activeForeground: # Active Tab foreground color in an active group
+  tab.border: !alpha [*CYAN, 45]
+  tab.activeBorderTop: # A border drawn to the top of the active tab
+  tab.activeBorder: *WHITE # A border drawn to the bottom of the active tab
+  tab.unfocusedActiveBorder: # A border drawn to the bottom of the active tab in an editor group that is not focused
+  tab.inactiveBackground: # Inactive Tab background color
+  tab.inactiveForeground: # Inactive Tab foreground color in an active group
+  tab.unfocusedActiveForeground: # Active tab foreground color in an inactive editor group
+  tab.unfocusedInactiveForeground: # Inactive tab foreground color in an inactive editor group
 
   # ——— Editor Widget Colors ———
-  editorWidget.background:                                                         # Background color of editor widgets, such as Find/Replace
-  editorWidgetBorder:                                                              # Border color of the editor widget unless the widget does not contain a border or defines its own border color
+  editorWidget.background: # Background color of editor widgets, such as Find/Replace
+  editorWidgetBorder: # Border color of the editor widget unless the widget does not contain a border or defines its own border color
 
-  editorSuggestWidget.background:                                                  # Background color of the suggestion widget
-  editorSuggestWidget.border: !alpha [*CYAN, 45]                                                 # Border color of the suggestion widget
-  editorSuggestWidget.foreground:                                                  # Foreground color of the suggestion widget
-  editorSuggestWidget.highlightForeground:                                         # Color of the match highlights in the suggestion widget
-  editorSuggestWidget.selectedBackground:                                          # Background color of the selected entry in the suggestion widget
+  editorSuggestWidget.background: # Background color of the suggestion widget
+  editorSuggestWidget.border: !alpha [*CYAN, 45] # Border color of the suggestion widget
+  editorSuggestWidget.foreground: # Foreground color of the suggestion widget
+  editorSuggestWidget.highlightForeground: # Color of the match highlights in the suggestion widget
+  editorSuggestWidget.selectedBackground: # Background color of the selected entry in the suggestion widget
 
-  editorHoverWidget.background:                                                    # Background color of the editor hover
-  editorHoverWidget.border: !alpha [*CYAN, 45]                                                         # Border color of the editor hover
+  editorHoverWidget.background: # Background color of the editor hover
+  editorHoverWidget.border: !alpha [*CYAN, 45] # Border color of the editor hover
 
-  debugExceptionWidget.background:                                                 # Exception widget background color
-  debugExceptionWidget.border: !alpha [*CYAN, 45]                                                # Exception widget border color
+  debugExceptionWidget.background: # Exception widget background color
+  debugExceptionWidget.border: !alpha [*CYAN, 45] # Exception widget border color
 
-  editorMarkerNavigation.background:                                               # Editor marker navigation widget background
-  editorMarkerNavigationError.background:                                          # Editor marker navigation widget error color
-  editorMarkerNavigationWarning.background:                                        # Editor marker navigation widget warning color
+  editorMarkerNavigation.background: # Editor marker navigation widget background
+  editorMarkerNavigationError.background: # Editor marker navigation widget error color
+  editorMarkerNavigationWarning.background: # Editor marker navigation widget warning color
 
   # ——— Title Bar Colors ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors
-  titleBar.activeBackground: *BGLighter                                            # Title Bar background when the window is active
-  titleBar.activeForeground:                                                       # Title Bar foreground when the window is active
-  titleBar.inactiveBackground:                                                     # Title Bar background when the window is inactive
-  titleBar.inactiveForeground:                                                     # Title Bar foreground when the window is inactive
-  titleBar.border: !alpha [*CYAN, 45]   
+  titleBar.activeBackground: *BGLighter # Title Bar background when the window is active
+  titleBar.activeForeground: # Title Bar foreground when the window is active
+  titleBar.inactiveBackground: # Title Bar background when the window is inactive
+  titleBar.inactiveForeground: # Title Bar foreground when the window is inactive
+  titleBar.border: !alpha [*CYAN, 45]
 
   # ——— Status Bar Colors [the bottom of the workbench] ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_status-bar-colors
-  statusBar.background: *BGLighter                                                           # Standard Status Bar background color
-  statusBar.foreground:                                                            # Status Bar foreground color
-  statusBar.debuggingBackground:                                                   # Status Bar background color when a program is being debugged
-  statusBar.debuggingForeground:                                                   # Status Bar foreground color when a program is being debugged
-  statusBar.noFolderBackground:                                                    # Status Bar foreground color when no folder is opened
-  statusBar.noFolderForeground:                                                    # Status Bar background color when no folder is opened
-  statusBarItem.activeBackground:                                                  # Status Bar item background color when clicking
-  statusBarItem.hoverBackground:                                                   # Status Bar item background color when hovering
-  statusBarItem.prominentBackground:                                               # Status Bar prominent items background color. Prominent items stand out from other Status Bar entries to indicate importance
-  statusBarItem.prominentHoverBackground:                                          # Status Bar prominent items background color when hovering. Prominent items stand out from other Status Bar entries to indicate importance
-  statusBarItem.remoteForeground:                                                  # Background color for the remote indicator on the status bar
-  statusBarItem.remoteBackground:                                                  # Foreground color for the remote indicator on the status bar
-  statusBar.border: !alpha [*CYAN, 45]   
+  statusBar.background: *BGLighter # Standard Status Bar background color
+  statusBar.foreground: # Status Bar foreground color
+  statusBar.debuggingBackground: # Status Bar background color when a program is being debugged
+  statusBar.debuggingForeground: # Status Bar foreground color when a program is being debugged
+  statusBar.noFolderBackground: # Status Bar foreground color when no folder is opened
+  statusBar.noFolderForeground: # Status Bar background color when no folder is opened
+  statusBarItem.activeBackground: # Status Bar item background color when clicking
+  statusBarItem.hoverBackground: # Status Bar item background color when hovering
+  statusBarItem.prominentBackground: # Status Bar prominent items background color. Prominent items stand out from other Status Bar entries to indicate importance
+  statusBarItem.prominentHoverBackground: # Status Bar prominent items background color when hovering. Prominent items stand out from other Status Bar entries to indicate importance
+  statusBarItem.remoteForeground: # Background color for the remote indicator on the status bar
+  statusBarItem.remoteBackground: # Foreground color for the remote indicator on the status bar
+  statusBar.border: !alpha [*CYAN, 45]
 
   # ——— Scroll Bar Control ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_scroll-bar-control
-  scrollbar.shadow:                                                               # Scroll Bar shadow to indicate that the view is scrolled
-  scrollbarSlider.activeBackground:                                               # Slider background color when active
-  scrollbarSlider.background:                                                     # Slider background color
-  scrollbarSlider.hoverBackground:                                                # Slider background color when hovering
+  scrollbar.shadow: # Scroll Bar shadow to indicate that the view is scrolled
+  scrollbarSlider.activeBackground: # Slider background color when active
+  scrollbarSlider.background: # Slider background color
+  scrollbarSlider.hoverBackground: # Slider background color when hovering
 
   # ——— Progress Bar ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_progress-bar
-  progressBar.background:                                                          # Background color of the progress bar shown for long running operations
+  progressBar.background: # Background color of the progress bar shown for long running operations
 
   # ——— Integrated Terminal Colors ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_integrated-terminal-colors
@@ -495,147 +558,147 @@ colors:
 
   # ——— Input Control ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_input-control
-  input.background:                                                                # Input box background
-  input.foreground:                                                                # Input box foreground
-  input.border: !alpha [*CYAN, 45]                                                               # Input box border
-  input.placeholderForeground:                                                     # Input box foreground color for placeholder text
-  inputOption.activeBorder: *WHITE                                                 # Border color of activated options in input fields
-  inputValidation.infoForeground:                                                  # Input validation foreground color for information severity
-  inputValidation.infoBackground:                                                  # Input validation background color for information severity
-  inputValidation.infoBorder:                                                      # Input validation border color for information severity
-  inputValidation.warningForeground:                                               # Input validation foreground color for warning severity
-  inputValidation.warningBackground:                                               # Input validation background color for information warning
-  inputValidation.warningBorder:                                                   # Input validation border color for warning severity
-  inputValidation.errorForeground:                                                 # Input validation foreground color for error severity
-  inputValidation.errorBackground:                                                 # Input validation background color for error severity
-  inputValidation.errorBorder:                                                     # Input validation border color for error severity
-  
+  input.background: # Input box background
+  input.foreground: # Input box foreground
+  input.border: !alpha [*CYAN, 45] # Input box border
+  input.placeholderForeground: # Input box foreground color for placeholder text
+  inputOption.activeBorder: *WHITE # Border color of activated options in input fields
+  inputValidation.infoForeground: # Input validation foreground color for information severity
+  inputValidation.infoBackground: # Input validation background color for information severity
+  inputValidation.infoBorder: # Input validation border color for information severity
+  inputValidation.warningForeground: # Input validation foreground color for warning severity
+  inputValidation.warningBackground: # Input validation background color for information warning
+  inputValidation.warningBorder: # Input validation border color for warning severity
+  inputValidation.errorForeground: # Input validation foreground color for error severity
+  inputValidation.errorBackground: # Input validation background color for error severity
+  inputValidation.errorBorder: # Input validation border color for error severity
+
   # ——— List & Trees ———
-  list.activeSelectionBackground:                                                  # List/Tree background color for the selected item when the list/tree is active
-  list.activeSelectionForeground:                                                  # List/Tree foreground color for the selected item when the list/tree is active
-  list.dropBackground:                                                             # List/Tree drag and drop background when moving items around using the mouse
-  list.focusBackground:                                                            # List/Tree background color for the focused item when the list/tree is active
-  list.highlightForeground:                                                        # List/Tree foreground color of the match highlights when searching inside the list/tree
-  list.hoverBackground:                                                            # List/Tree background when hovering over items using the mouse
-  list.inactiveSelectionBackground:                                                # List/Tree background color for the selected item when the list/tree is inactive
-  list.inactiveSelectionForeground:                                                # List/Tree foreground color for the selected item when the list/tree is inactive. An active list/tree has keyboard focus, an inactive does not
-  list.warningForeground:                                                          # Color of warning decorations in the explorer
-  list.errorForeground:                                                            # Color of error decorations in the explorer
-  list.hoverForeground:                                                            # List/Tree foreground when hovering over items using the mouse
-  list.focusForeground:                                                            # List/Tree foreground color for the focused item when the list/tree is active. An active list/tree has keyboard focus, an inactive does not
+  list.activeSelectionBackground: # List/Tree background color for the selected item when the list/tree is active
+  list.activeSelectionForeground: # List/Tree foreground color for the selected item when the list/tree is active
+  list.dropBackground: # List/Tree drag and drop background when moving items around using the mouse
+  list.focusBackground: # List/Tree background color for the focused item when the list/tree is active
+  list.highlightForeground: # List/Tree foreground color of the match highlights when searching inside the list/tree
+  list.hoverBackground: # List/Tree background when hovering over items using the mouse
+  list.inactiveSelectionBackground: # List/Tree background color for the selected item when the list/tree is inactive
+  list.inactiveSelectionForeground: # List/Tree foreground color for the selected item when the list/tree is inactive. An active list/tree has keyboard focus, an inactive does not
+  list.warningForeground: # Color of warning decorations in the explorer
+  list.errorForeground: # Color of error decorations in the explorer
+  list.hoverForeground: # List/Tree foreground when hovering over items using the mouse
+  list.focusForeground: # List/Tree foreground color for the focused item when the list/tree is active. An active list/tree has keyboard focus, an inactive does not
 
   # ——— Explorer Colors ———
-  gitDecoration.modifiedResourceForeground: 
-  gitDecoration.deletedResourceForeground: 
-  gitDecoration.untrackedResourceForeground: 
-  gitDecoration.ignoredResourceForeground: 
-  gitDecoration.conflictingResourceForeground: 
+  gitDecoration.modifiedResourceForeground:
+  gitDecoration.deletedResourceForeground:
+  gitDecoration.untrackedResourceForeground:
+  gitDecoration.ignoredResourceForeground:
+  gitDecoration.conflictingResourceForeground:
 
   # ——— Diff Editor Colors ———
-  diffEditor.insertedTextBackground:                                               # Background color for inserted text
-  diffEditor.insertedTextBorder:                                                   # Outline color for inserted text
-  diffEditor.removedTextBackground:                                                # Background color for removed text
-  diffEditor.removedTextBorder:                                                    # Outline color for removed text
+  diffEditor.insertedTextBackground: # Background color for inserted text
+  diffEditor.insertedTextBorder: # Outline color for inserted text
+  diffEditor.removedTextBackground: # Background color for removed text
+  diffEditor.removedTextBorder: # Outline color for removed text
 
   # ——— Peek View Colors ———
-  peekView.border:  !alpha [*CYAN, 45]                                                           # Color of the peek view borders and arrow
-  peekViewEditor.background:                                                       # Background color of the peek view editor
-  peekViewEditorGutter.background:                                                 # Background color of the gutter in the peek view editor
-  peekViewEditor.matchHighlightBackground:                                         # Match highlight color in the peek view editor
-  peekViewResult.background:                                                       # Background color of the peek view result list
-  peekViewResult.fileForeground:                                                   # Foreground color for file nodes in the peek view result list
-  peekViewResult.lineForeground:                                                   # Foreground color for line nodes in the peek view result list
-  peekViewResult.matchHighlightBackground:                                         # Match highlight color in the peek view result list
-  peekViewResult.selectionBackground:                                              # Background color of the selected entry in the peek view result list
-  peekViewResult.selectionForeground:                                              # Foreground color of the selected entry in the peek view result list
-  peekViewTitle.background:                                                        # Background color of the peek view title area
-  peekViewTitleDescription.foreground:                                             # Color of the peek view title info
-  peekViewTitleLabel.foreground:                                                   # Color of the peek view title
+  peekView.border: !alpha [*CYAN, 45] # Color of the peek view borders and arrow
+  peekViewEditor.background: # Background color of the peek view editor
+  peekViewEditorGutter.background: # Background color of the gutter in the peek view editor
+  peekViewEditor.matchHighlightBackground: # Match highlight color in the peek view editor
+  peekViewResult.background: # Background color of the peek view result list
+  peekViewResult.fileForeground: # Foreground color for file nodes in the peek view result list
+  peekViewResult.lineForeground: # Foreground color for line nodes in the peek view result list
+  peekViewResult.matchHighlightBackground: # Match highlight color in the peek view result list
+  peekViewResult.selectionBackground: # Background color of the selected entry in the peek view result list
+  peekViewResult.selectionForeground: # Foreground color of the selected entry in the peek view result list
+  peekViewTitle.background: # Background color of the peek view title area
+  peekViewTitleDescription.foreground: # Color of the peek view title info
+  peekViewTitleLabel.foreground: # Color of the peek view title
 
   # ——— Merge Conflicts ———
-  merge.currentHeaderBackground:                                                   # Current header background in inline merge conflicts
-  merge.currentContentBackground:                                                  # Current content background in inline merge conflicts
-  merge.incomingHeaderBackground:                                                  # Incoming header background in inline merge conflicts
-  merge.incomingContentBackground:                                                 # Incoming content background in inline merge conflicts
-  merge.border: !alpha [*CYAN, 45]                                                               # Border color on headers and the splitter in inline merge conflicts
-  editorOverviewRuler.currentContentForeground:                                    # Current overview ruler foreground for inline merge conflicts
-  editorOverviewRuler.incomingContentForeground:                                   # Incoming overview ruler foreground for inline merge conflicts
+  merge.currentHeaderBackground: # Current header background in inline merge conflicts
+  merge.currentContentBackground: # Current content background in inline merge conflicts
+  merge.incomingHeaderBackground: # Incoming header background in inline merge conflicts
+  merge.incomingContentBackground: # Incoming content background in inline merge conflicts
+  merge.border: !alpha [*CYAN, 45] # Border color on headers and the splitter in inline merge conflicts
+  editorOverviewRuler.currentContentForeground: # Current overview ruler foreground for inline merge conflicts
+  editorOverviewRuler.incomingContentForeground: # Incoming overview ruler foreground for inline merge conflicts
 
   # ——— Panel Colors ———
-  panel.background:                                                                # Panel background color
-  panel.border: !alpha [*CYAN, 45]                                                               # Panel border color on the top separating to the editor
-  panelTitle.activeBorder:                                                         # Border color for the active panel title
-  panelTitle.activeForeground:                                                     # Title color for the active panel
-  panelTitle.inactiveForeground:                                                   # Title color for the inactive panel
+  panel.background: # Panel background color
+  panel.border: !alpha [*CYAN, 45] # Panel border color on the top separating to the editor
+  panelTitle.activeBorder: # Border color for the active panel title
+  panelTitle.activeForeground: # Title color for the active panel
+  panelTitle.inactiveForeground: # Title color for the inactive panel
 
   # ——— Notification Dialog Colors ———
-  notification.background:                                                         # Notifications background color
-  notification.foreground:                                                         # Notifications foreground color
-  notification.buttonBackground: 
-  notification.buttonForeground: 
-  notification.buttonHoverBackground: 
-  notification.errorBackground: 
-  notification.errorForeground: 
-  notification.infoBackground: 
-  notification.infoForeground: 
-  notification.warningBackground: 
-  notification.warningForeground: 
+  notification.background: # Notifications background color
+  notification.foreground: # Notifications foreground color
+  notification.buttonBackground:
+  notification.buttonForeground:
+  notification.buttonHoverBackground:
+  notification.errorBackground:
+  notification.errorForeground:
+  notification.infoBackground:
+  notification.infoForeground:
+  notification.warningBackground:
+  notification.warningForeground:
 
   # ——— Extensions ———
-  extensionButton.prominentForeground:                                             # Extension view button foreground color (for example Install button)
-  extensionButton.prominentBackground:                                             # Extension view button background color
-  extensionButton.prominentHoverBackground:                                        # Extension view button background hover color
+  extensionButton.prominentForeground: # Extension view button foreground color (for example Install button)
+  extensionButton.prominentBackground: # Extension view button background color
+  extensionButton.prominentHoverBackground: # Extension view button background hover color
 
   # ——— Quick Picker ———
-  pickerGroup.border: !alpha [*CYAN, 45]                                                         # Quick picker (Quick Open) color for grouping borders
-  pickerGroup.foreground:                                                          # Quick picker (Quick Open) color for grouping labels
+  pickerGroup.border: !alpha [*CYAN, 45] # Quick picker (Quick Open) color for grouping borders
+  pickerGroup.foreground: # Quick picker (Quick Open) color for grouping labels
 
   # ——— Debug ———
-  debugToolBar.background:                                                         # Debug toolbar background color
+  debugToolBar.background: # Debug toolbar background color
 
   # ——— Welcome Page ———
-  welcomePage.buttonBackground:                                                    # Background color for the buttons on the Welcome page
-  welcomePage.buttonHoverBackground:                                               # Hover background color for the buttons on the Welcome page
-  walkThrough.embeddedEditorBackground:                                            # Background color for the embedded editors on the Interactive Playground
+  welcomePage.buttonBackground: # Background color for the buttons on the Welcome page
+  welcomePage.buttonHoverBackground: # Hover background color for the buttons on the Welcome page
+  walkThrough.embeddedEditorBackground: # Background color for the embedded editors on the Interactive Playground
 
   # ——— Setting Editor ———
-  settings.headerForeground:                                                       # The foreground color for a section header or active title
-  settings.modifiedItemForeground:                                                 # The foreground color for a the modified setting indicator
-  settings.modifiedItemIndicator:                                                  # The color of the line that indicates a modified setting
-  settings.inactiveSelectedItemBorder:                                             # The color of the selected setting row border, when the settings list does not have focus
-  settings.dropdownBackground:                                                     # Dropdown background
-  settings.dropdownForeground:                                                     # Dropdown foreground
-  settings.dropdownBorder:                                                         # Dropdown border
-  settings.checkboxBackground:                                                     # Checkbox background
-  settings.checkboxForeground:                                                     # Checkbox foreground
-  settings.checkboxBorder:                                                         # Checkbox border
-  settings.textInputBackground:                                                    # Text input box background
-  settings.textInputForeground:                                                    # Text input box foreground
-  settings.textInputBorder:                                                        # Text input box border
-  settings.numberInputBackground:                                                  # Number input box background
-  settings.numberInputForeground:                                                  # Number input box foreground
-  settings.numberInputBorder:                                                      # Number input box border
+  settings.headerForeground: # The foreground color for a section header or active title
+  settings.modifiedItemForeground: # The foreground color for a the modified setting indicator
+  settings.modifiedItemIndicator: # The color of the line that indicates a modified setting
+  settings.inactiveSelectedItemBorder: # The color of the selected setting row border, when the settings list does not have focus
+  settings.dropdownBackground: # Dropdown background
+  settings.dropdownForeground: # Dropdown foreground
+  settings.dropdownBorder: # Dropdown border
+  settings.checkboxBackground: # Checkbox background
+  settings.checkboxForeground: # Checkbox foreground
+  settings.checkboxBorder: # Checkbox border
+  settings.textInputBackground: # Text input box background
+  settings.textInputForeground: # Text input box foreground
+  settings.textInputBorder: # Text input box border
+  settings.numberInputBackground: # Number input box background
+  settings.numberInputForeground: # Number input box foreground
+  settings.numberInputBorder: # Number input box border
 
   # ——— Breadcrumbs ———
-  breadcrumb.foreground:                                                           # Color of breadcrumb items
+  breadcrumb.foreground: # Color of breadcrumb items
   breadcrumb.background: *BGLight
-  breadcrumb.focusForeground:                                                      # Color of focused breadcrumb items
-  breadcrumb.activeSelectionForeground:                                            # Color of selected breadcrumb items
-  breadcrumbPicker.background:                                                     # Background color of breadcrumb item picker
+  breadcrumb.focusForeground: # Color of focused breadcrumb items
+  breadcrumb.activeSelectionForeground: # Color of selected breadcrumb items
+  breadcrumbPicker.background: # Background color of breadcrumb item picker
 
   # ——— Misc ———
-  menu.separatorBackground:                                                        # Color of a separator menu item in menus
+  menu.separatorBackground: # Color of a separator menu item in menus
 
-  listFilterWidget.background:                                                     # Background color of the type filter widget in lists and trees.
-  listFilterWidget.outline:                                                        # Outline color of the type filter widget in lists and trees.
-  listFilterWidget.noMatchesOutline:                                               # Outline color of the type filter widget in lists and trees, when there are no matches.
+  listFilterWidget.background: # Background color of the type filter widget in lists and trees.
+  listFilterWidget.outline: # Outline color of the type filter widget in lists and trees.
+  listFilterWidget.noMatchesOutline: # Outline color of the type filter widget in lists and trees, when there are no matches.
 
   # ——— Minimap ———
   # The Minimap shows a minified version of the current file.
-  minimap.selectionHighlight:                                                      # Highlight color for the editor selection.
-  minimap.errorHighlight:                                                          # Highlight color for errors within the editor.
-  minimap.warningHighlight:                                                        # Highlight color for warnings within the editor.
-  minimap.background: *BGLight                                                     # Minimap background color.
-  minimapSlider.background:                                                        # Minimap slider background color.
-  minimapGutter.addedBackground:                                                   # Minimap gutter color for added content.
-  minimapGutter.deletedBackground:                                                 # Minimap gutter color for deleted content.
+  minimap.selectionHighlight: # Highlight color for the editor selection.
+  minimap.errorHighlight: # Highlight color for errors within the editor.
+  minimap.warningHighlight: # Highlight color for warnings within the editor.
+  minimap.background: *BGLight # Minimap background color.
+  minimapSlider.background: # Minimap slider background color.
+  minimapGutter.addedBackground: # Minimap gutter color for added content.
+  minimapGutter.deletedBackground: # Minimap gutter color for deleted content.
