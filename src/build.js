@@ -11,10 +11,16 @@ if (!fs.existsSync(THEME_DIR)) {
 }
 
 variants.forEach((variant) => {
-  let theme = generate(variant);
-  
+  let {basic, pro} = generate(variant);
+
+  // write basic themes
   fs.writeFileSync(
     path.join(THEME_DIR, `silot-${variant}.json`),
-    JSON.stringify(theme, null, 2)
+    JSON.stringify(basic, null, 2)
+  );
+  // write pro theme
+  fs.writeFileSync(
+    path.join(THEME_DIR, `silot-pro-${variant}.json`),
+    JSON.stringify(pro, null, 2)
   );
 });

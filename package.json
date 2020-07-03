@@ -37,9 +37,9 @@
         "path": "./themes/silot-dark-classic.json"
       },
       {
-        "label": "Silot (Light Classic)",
-        "uiTheme": "vs",
-        "path": "./themes/silot-light-classic.json"
+        "label": "Silot Pro(Dark Classic)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/silot-pro-dark-classic.json"
       }
     ]
   },

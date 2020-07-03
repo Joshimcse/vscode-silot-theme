@@ -1,0 +1,5 @@
+- name: "Pro features for Dank Mono/Operator Mono fonts"
+  scope:
+    - comment
+  settings:
+    fontStyle: italic

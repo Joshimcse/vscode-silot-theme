@@ -4,6 +4,7 @@ const { Type, Schema, load } = require("js-yaml");
 const paths = require("./paths");
 
 const YamlsFile = {};
+YamlsFile["pro"] = fs.readFileSync(paths["pro"], "utf8");
 YamlsFile["dark-classic"] = fs.readFileSync(paths["dark-classic"], "utf8");
 
 module.exports = (name) => {
@@ -15,14 +16,24 @@ module.exports = (name) => {
   const schema = Schema.create([withAlphaType]);
 
   /** @type {Theme} */
-  const theme = load(YamlsFile[`${name}`], { schema });
+  const pro = load(YamlsFile.pro, { schema });
+  const basic = load(YamlsFile[`${name}`], { schema });
 
   // Remove nulls and other falsy values from colors
-  for (const key of Object.keys(theme.colors)) {
-    if (!theme.colors[key]) {
-      delete theme.colors[key];
+  for (const key of Object.keys(basic.colors)) {
+    if (!basic.colors[key]) {
+      delete basic.colors[key];
     }
   }
 
-  return theme;
+  return {
+    basic,
+    pro: {
+      ...basic,
+      tokenColors: [
+        ...basic.tokenColors,
+        ...pro
+      ]
+    },
+  };
 };
