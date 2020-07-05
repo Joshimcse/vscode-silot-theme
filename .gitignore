@@ -4,3 +4,5 @@ themes
 src/tests
 bin
 demos
+.env
+silot-ui-theme-*

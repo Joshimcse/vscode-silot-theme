@@ -1,55 +1,57 @@
 {
-  "name": "theme-silot",
-  "version": "0.1.0",
-  "displayName": "Silot UI Theme",
-  "description": "An elegant and juicy material-like theme for Visual Studio Code.",
-  "publisher": "joshimcse",
-  "author": "Joshim Uddin <joshimcse@gmail.com> (http://about.me/joshimcse)",
-  "icon": "icon.png",
-  "license": "MIT",
-  "scripts": {
-    "build": "node ./src/build.js"
-  },
-  "keywords": [
-    "material theme",
-    "silot",
-    "dark",
-    "light"
-  ],
-  "engines": {
-    "vscode": "^1.38.0"
-  },
-  "repository": {
-    "url": "https://github.com/joshimcse/vscode-syloti-theme",
-    "type": "git"
-  },
-  "bugs": {
-    "url": "https://github.com/joshimcse/vscode-syloti-theme/issues"
-  },
-  "categories": [
-    "Themes"
-  ],
-  "contributes": {
-    "themes": [
-      {
-        "label": "Silot (Dark Classic)",
-        "uiTheme": "vs-dark",
-        "path": "./themes/silot-dark-classic.json"
-      },
-      {
-        "label": "Silot Pro(Dark Classic)",
-        "uiTheme": "vs-dark",
-        "path": "./themes/silot-pro-dark-classic.json"
-      }
-    ]
-  },
-  "devDependencies": {
-    "js-yaml": "^3.13.1",
-    "nodemon": "^1.19.2",
-    "prettier": "^1.18.2",
-    "tinycolor2": "^1.4.1"
-  },
-  "__metadata": {
-    "publisherDisplayName": "Joshim Uddin"
-  }
+	"name": "silot-ui-theme",
+	"version": "0.1.1",
+	"displayName": "Silot UI Theme",
+	"description": "An elegant and juicy material-like theme for Visual Studio Code.",
+	"publisher": "joshimcse",
+	"author": "Joshim Uddin <joshimcse@gmail.com> (http://about.me/joshimcse)",
+	"icon": "icon.png",
+	"license": "MIT",
+	"scripts": {
+		"build": "node ./src/build.js"
+	},
+	"keywords": [
+		"material theme",
+		"silot",
+		"dark",
+		"light"
+	],
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"repository": {
+		"url": "https://github.com/joshimcse/vscode-syloti-theme",
+		"type": "git"
+	},
+	"bugs": {
+		"url": "https://github.com/joshimcse/vscode-syloti-theme/issues"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Silot (Dark Classic)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/silot-dark-classic.json"
+			},
+			{
+				"label": "Silot Pro(Dark Classic)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/silot-pro-dark-classic.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"js-yaml": "^3.13.1",
+		"nodemon": "^1.19.2",
+		"prettier": "^1.18.2",
+		"tinycolor2": "^1.4.1"
+	},
+	"__metadata": {
+		"id": "6a6b8ee4-1ce0-4041-8efd-a979d93d0dd7",
+		"publisherDisplayName": "Joshim Uddin",
+		"publisherId": "fd17cb8d-b69f-4249-80fd-cce96b95a3d1"
+	}
 }
