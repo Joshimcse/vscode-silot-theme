@@ -4,20 +4,20 @@
 
 An elegant and juicy material-like theme for [Visual Studio Code](http://code.visualstudio.com)
 
-[![vscode](https://img.shields.io/badge/vscode-v1.3-373277.svg?style=for-the-badge)](https://code.visualstudio.com/updates/v1_31)
+[![vscode](https://img.shields.io/badge/vscode-v1.20-373277.svg?style=for-the-badge)](https://code.visualstudio.com/updates/v1_20)
 </div>
 
 
 ## Installation
 
 1. Open the **Extensions** sidebar in VS Code. `View → Extensions`
-1. Search for `Silot`, choose "Silot Official Theme" by **Joshim Uddin**
-1. Click **Install** to install it
-1. Click **Reload** to reload your editor
-1. Navigate to File > Preferences > Color Theme > **Silot (Dark Classic)** or any of the variants listed
+1. Search for `Silot`, choose `Silot UI Theme` by **Joshim Uddin**
+1. Click `Install` to install it
+1. Click `Reload` to reload your editor
+1. Navigate to `File > Preferences > Color Theme > Silot (Dark Classic)` or any of the variants listed
 1. Yay! You're all set 🎉🎉.
 
-Psst! If you have the [Dank Mono](https://dank.sh) / [Operator Mono](https://www.typography.com/fonts/operator) font installed, find **Silot Pro (variant-name)** in the theme list. Also, check out **Silot Italic** for a less operator-mono-ish experience.
+Psst! If you have the [Dank Mono](https://dank.sh) / [Operator Mono](https://www.typography.com/fonts/operator) font installed, find `Silot Pro (variant-name)` in the theme list. Also, check out **Silot Italic** for a less operator-mono-ish experience.
 
 
 ## Settings
