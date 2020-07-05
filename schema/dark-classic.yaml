@@ -48,10 +48,10 @@ Silot Dark Classic:
     - &TAB_DROP_BG "#44475A70"
     # UI Variants
     - &BORDERLight "#CCCCCC"
+    - &BGLight "#333333" # HSV ()
+    - &BGDark "#1D1E1F" # HSV ()
     - &BGLighter "#585959"
-    - &BGLight "#333333" # HSV (230   , 25.71, 27.45)
-    - &BGDark "#21222C" # HSV (234.55, 25   , 17.25)
-    - &BGDarker "#191A21" # HSV (234.55, 25   , 13   )
+    - &BGDarker "#191A21" # HSV ()
 
 # ——— Syntax Highlight ———
 tokenColors:
@@ -465,19 +465,20 @@ colors:
 
   # ——— Editor Group & Tabs ———
   editorGroup.background: # Background color of an editor group. The background color shows up when dragging editor groups around
-  editorGroup.border: !alpha [*CYAN, 45] # Color to separate multiple editor groups from each other
+  editorGroup.border: *BORDER # Color to separate multiple editor groups from each other
   editorGroup.dropBackground: # Background color when dragging editors around
   editorGroupHeader.noTabsBackground: # Background color of the editor group title header when Tabs are disabled
   editorGroupHeader.tabsBackground: # Background color of the Tabs container
   editorGroupHeader.tabsBorder: # Border color of the editor group title header when tabs are enabled. Editor groups are the containers of editors
-  tab.activeBackground: # Active Tab background color
+  
+  tab.activeBackground: *BG # Active Tab background color
   tab.activeForeground: # Active Tab foreground color in an active group
   tab.border: *BORDER
-  tab.activeBorderTop: # A border drawn to the top of the active tab
-  tab.activeBorder: *BORDER # A border drawn to the bottom of the active tab
+  tab.activeBorderTop: *BORDER # A border drawn to the top of the active tab
+  tab.activeBorder:  # A border drawn to the bottom of the active tab
   tab.unfocusedActiveBorder: # A border drawn to the bottom of the active tab in an editor group that is not focused
-  tab.inactiveBackground: # Inactive Tab background color
-  tab.inactiveForeground: # Inactive Tab foreground color in an active group
+  tab.inactiveBackground: *BGLight # Inactive Tab background color
+  tab.inactiveForeground: *COMMENT # Inactive Tab foreground color in an active group
   tab.unfocusedActiveForeground: # Active tab foreground color in an inactive editor group
   tab.unfocusedInactiveForeground: # Inactive tab foreground color in an inactive editor group
 
@@ -503,15 +504,15 @@ colors:
 
   # ——— Title Bar Colors ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors
-  titleBar.activeBackground: *BGLighter # Title Bar background when the window is active
+  titleBar.activeBackground: *BGDark # Title Bar background when the window is active
   titleBar.activeForeground: # Title Bar foreground when the window is active
   titleBar.inactiveBackground: # Title Bar background when the window is inactive
   titleBar.inactiveForeground: # Title Bar foreground when the window is inactive
-  titleBar.border: *BORDER
+  titleBar.border: 
 
   # ——— Status Bar Colors [the bottom of the workbench] ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_status-bar-colors
-  statusBar.background: *BGLighter # Standard Status Bar background color
+  statusBar.background: *BGDark # Standard Status Bar background color
   statusBar.foreground: # Status Bar foreground color
   statusBar.debuggingBackground: # Status Bar background color when a program is being debugged
   statusBar.debuggingForeground: # Status Bar foreground color when a program is being debugged
@@ -523,7 +524,7 @@ colors:
   statusBarItem.prominentHoverBackground: # Status Bar prominent items background color when hovering. Prominent items stand out from other Status Bar entries to indicate importance
   statusBarItem.remoteForeground: # Background color for the remote indicator on the status bar
   statusBarItem.remoteBackground: # Foreground color for the remote indicator on the status bar
-  statusBar.border: !alpha [*CYAN, 45]
+  statusBar.border: *BORDER
 
   # ——— Scroll Bar Control ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_scroll-bar-control
@@ -682,7 +683,7 @@ colors:
 
   # ——— Breadcrumbs ———
   breadcrumb.foreground: # Color of breadcrumb items
-  breadcrumb.background: *BGLight
+  breadcrumb.background: *BG
   breadcrumb.focusForeground: # Color of focused breadcrumb items
   breadcrumb.activeSelectionForeground: # Color of selected breadcrumb items
   breadcrumbPicker.background: # Background color of breadcrumb item picker
