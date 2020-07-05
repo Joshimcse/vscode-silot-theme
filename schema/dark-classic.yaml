@@ -360,8 +360,8 @@ colors:
   activityBar.border: *BORDER # Activity Bar border color with the Side Bar
   activityBar.activeBorder: *GRAY # Activity Bar indicator color
   activityBar.activeBackground: # Activity Bar indicator background color
-  activityBarBadge.background: !alpha [*WHITE, 98] # Activity notification badge background color
-  activityBarBadge.foreground: *BGButton # Activity notification badge foreground color
+  activityBarBadge.background: *PINK # Activity notification badge background color
+  activityBarBadge.foreground: *BORDER # Activity notification badge foreground color
 
   # ——— Side Bar ———
   # https://code.visualstudio.com/docs/getstarted/theme-color-reference#_side-bar
@@ -703,3 +703,6 @@ colors:
   minimapSlider.background: # Minimap slider background color.
   minimapGutter.addedBackground: # Minimap gutter color for added content.
   minimapGutter.deletedBackground: # Minimap gutter color for deleted content.
+  
+  # Others
+  menu.selectionBackground: *BORDER
