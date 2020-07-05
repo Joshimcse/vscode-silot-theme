@@ -1,15 +1,11 @@
 const path = require("path");
 
-const DARK_CLASSIC_YAML_PATH = path.join(
-  __dirname,
-  "..",
-  "schema",
-  "dark-classic.yaml"
-);
-
-const PRO_YAML_PATH = path.join(__dirname, "..", "schema", "pro.yaml");
+const DARK_CLASSIC = path.join(__dirname, "..", "schema", "dark-classic.yaml");
+const DARK_BLUE = path.join(__dirname, "..", "schema", "dark-blue.yaml");
+const PRO = path.join(__dirname, "..", "schema", "pro.yaml");
 
 module.exports = {
-  pro: PRO_YAML_PATH,
-  "dark-classic": DARK_CLASSIC_YAML_PATH,
+  pro: PRO,
+  "dark-classic": DARK_CLASSIC,
+  "dark-blue": DARK_BLUE,
 };

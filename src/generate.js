@@ -2,11 +2,15 @@ const fs = require("fs");
 const { Type, Schema, load } = require("js-yaml");
 const paths = require("./paths");
 
-const YamlsFile = {};
-YamlsFile["pro"] = fs.readFileSync(paths["pro"], "utf8");
-YamlsFile["dark-classic"] = fs.readFileSync(paths["dark-classic"], "utf8");
+function loadYaml(name) {
+  return {
+    pro: fs.readFileSync(paths["pro"], "utf8"),
+    basic: fs.readFileSync(paths[name], "utf8"),
+  };
+}
 
 module.exports = (name) => {
+  // define yaml schema
   const withAlphaType = new Type("!alpha", {
     kind: "sequence",
     construct: ([hexRGB, alpha]) => hexRGB + alpha,
@@ -14,9 +18,12 @@ module.exports = (name) => {
   });
   const schema = Schema.create([withAlphaType]);
 
-  /** @type {Theme} */
-  const pro = load(YamlsFile.pro, { schema });
-  const basic = load(YamlsFile[`${name}`], { schema });
+  // load yaml files with pro
+  const yamls = loadYaml(name);
+
+  // yaml file converted to js object.
+  const pro = load(yamls.pro, { schema });
+  const basic = load(yamls.basic, { schema });
 
   // Remove nulls and other falsy values from colors
   for (const key of Object.keys(basic.colors)) {
@@ -29,10 +36,7 @@ module.exports = (name) => {
     basic,
     pro: {
       ...basic,
-      tokenColors: [
-        ...basic.tokenColors,
-        ...pro
-      ]
+      tokenColors: [...basic.tokenColors, ...pro],
     },
   };
 };
