@@ -1,5 +1,4 @@
 const fs = require("fs");
-const path = require("path");
 const { Type, Schema, load } = require("js-yaml");
 const paths = require("./paths");
 
