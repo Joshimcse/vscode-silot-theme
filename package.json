@@ -20,11 +20,11 @@
     "vscode": "^1.20.1"
   },
   "repository": {
-    "url": "https://github.com/joshimcse/vscode-syloti-theme",
+    "url": "https://github.com/joshimcse/vscode-silot-theme",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/joshimcse/vscode-syloti-theme/issues"
+    "url": "https://github.com/joshimcse/vscode-silot-theme/issues"
   },
   "categories": [
     "Themes"
