@@ -2,7 +2,7 @@
 
 # Silot UI Theme
 
-An elegant and juicy material-like theme for [Visual Studio Code](http://code.visualstudio.com)
+An ingenuous and juicy material-like theme for [Visual Studio Code](http://code.visualstudio.com)
 
 [![vscode](https://img.shields.io/badge/vscode-v1.20-373277.svg?style=for-the-badge)](https://code.visualstudio.com/updates/v1_20)
 </div>
