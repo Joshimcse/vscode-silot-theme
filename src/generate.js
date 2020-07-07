@@ -1,11 +1,17 @@
 const fs = require("fs");
+const path = require("path");
 const { Type, Schema, load } = require("js-yaml");
-const paths = require("./paths");
 
-function loadYaml(name) {
+// return yaml file location
+function getLocation (name) {
+  return path.join(__dirname, "..", "schema", name + ".yaml")
+}
+
+// return yaml files
+function getYaml(name) {
   return {
-    pro: fs.readFileSync(paths["pro"], "utf8"),
-    basic: fs.readFileSync(paths[name], "utf8"),
+    pro: fs.readFileSync(getLocation('pro'), "utf8"),
+    basic: fs.readFileSync(getLocation(name), "utf8"),
   };
 }
 
@@ -19,7 +25,7 @@ module.exports = (name) => {
   const schema = Schema.create([withAlphaType]);
 
   // load yaml files with pro
-  const yamls = loadYaml(name);
+  const yamls = getYaml(name);
 
   // yaml file converted to js object.
   const pro = load(yamls.pro, { schema });
